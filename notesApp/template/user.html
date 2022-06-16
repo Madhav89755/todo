@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    
+</head>
+<body>
+    {% include 'custom.html' %}
+    <div class="container mt-5">
+
+        <h2 class="text-center alert alert-danger">Django Rest Framework CRUD - User</h2>
+        <div class="row">
+            <div class="col-sm-3">
+                <h4 class="text-center alert alert-info">
+                    Add/Update Section
+                </h4>
+                <form id="userRegisterForm" method="post">
+                    {{form.as_p}}
+                    <input type="submit" class="btn btn-success" id="submitUserBtn" value="Save">
+                </form>
+            </div>
+            <div class="col-sm-9">
+                <h4 class="text-center alert alert-info">
+                    List Section
+                </h4>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Sno</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Phone Number</th>
+                                <th scope="col">Age</th>
+                                <th scope="col">Office</th>
+                                <th scope="col">Designation</th>
+                                <th scope="col">Edit/Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="user_data">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/user.js' %}"></script>
+
+</body>
+</html>

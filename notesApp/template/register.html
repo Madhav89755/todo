@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: lightblue;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="container py-0">
+  <div class="row justify-content-center">
+    <div class="col-5 col-md-10 col-sm-12 bg-white py-5">
+          
+      <form  id="register_form">
+
+      <div class="container">
+        <h1>Register</h1>
+        <p>Please fill in this form to Register.</p>
+        <hr>
+
+        {{form.as_p}}
+        <button type="submit" id="register" class="registerbtn">Register</button>
+      </div>
+      
+      <div class="container signin">
+        <p>Already have an account? <a href="/">Login</a>.</p>
+      </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/register.js' %}"></script>
+{% comment %}
+{% include 'loginJS.html' %}
+{% endcomment %}
+</body>
+</html>
